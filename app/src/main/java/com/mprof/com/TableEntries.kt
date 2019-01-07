@@ -26,14 +26,14 @@ object RoleTable{
 }
 //discipline
 object FieldTable{
-    val TABLE_NAME = "Discipline"
+    val TABLE_NAME = "discipline"
     val COLUMN_ID = "id"
     val COLUMN_NAME = "name_field"
     val COLUMN_DESC = "description"
 }
 
 object AddressTable{
-    val TABLE_NAME = "adress"
+    val TABLE_NAME = "address"
     val COLUMN_ID ="adress_id"
     val COLUMN_NAME="street_name"
     val COLUMN_NUMBER ="street_nb"

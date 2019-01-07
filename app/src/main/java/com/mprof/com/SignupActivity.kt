@@ -6,6 +6,11 @@ import android.content.Intent
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.miharisoa.mobileproject.Model.Address
+import com.mprof.com.Model.Role
+import com.mprof.com.Model.User
+import com.mprof.com.R.id.role
+import com.mprof.com.Utils.doAsync
 
 
 class SignupActivity : AppCompatActivity() {
@@ -20,10 +25,11 @@ class SignupActivity : AppCompatActivity() {
         val password = findViewById(R.id.password) as EditText
         val confirmPassword = findViewById(R.id.confirmPassword) as EditText
         val rue = findViewById(R.id.rue) as EditText
+        val rue_num=findViewById(R.id.rue_num) as EditText
         val localite = findViewById(R.id.localite) as EditText
         val cp = findViewById(R.id.cp) as EditText
         val tel = findViewById(R.id.tel) as EditText
-        val birthdate = findViewById(R.id.birthdate) as EditText
+        //val birthdate = findViewById(R.id.birthdate) as EditText
         val level = findViewById(R.id.level) as EditText
         val signupButton = findViewById(R.id.signupButton) as Button
         val cancelButton = findViewById(R.id.cancelButton) as Button
@@ -36,20 +42,21 @@ class SignupActivity : AppCompatActivity() {
             var spassword = password.text.toString()
             var sconfirmPassword = confirmPassword.text.toString()
             var slocalite = localite.text.toString()
-            var scp = cp.text.toString()
+            var scp = cp.inputType
             var srue = rue.text.toString()
+            var numrue = rue_num.inputType
             var stel = tel.text.toString()
-            var sbirthdate = birthdate.text.toString()
+            //var sbirthdate = birthdate.text.toString()
             var slevel = level.text.toString()
 
-            if(srole.isNotEmpty() && stel.isNotEmpty() && sbirthdate.isNotEmpty() && slevel.isNotEmpty()
-                &&    scp.isNotEmpty() && snom.isNotEmpty() && sprenom.isNotEmpty() && semail.isNotEmpty()
+            if(srole.isNotEmpty() && stel.isNotEmpty()
+                &&    scp!= null && snom.isNotEmpty() && sprenom.isNotEmpty() && semail.isNotEmpty()
                 && spassword.isNotEmpty() && sconfirmPassword.isNotEmpty() && slocalite.isNotEmpty() && srue.isNotEmpty()) {
                 if (!spassword.equals(sconfirmPassword)) {
                     Toast.makeText(baseContext, "Password not matched", Toast.LENGTH_LONG).show()
                 }else {
                     if(isEmailValid(semail)){
-                        userSignUp(srole, snom, sprenom, semail, spassword, sconfirmPassword, slocalite, scp, srue, stel, sbirthdate, slevel)
+                        userSignUp(srole, snom, sprenom, semail, spassword, sconfirmPassword, slocalite, scp, srue, stel, slevel)
                     }else{
                         Toast.makeText(baseContext, "invalid email!", Toast.LENGTH_LONG).show()
                     }
@@ -57,6 +64,19 @@ class SignupActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(baseContext, "Field requried!", Toast.LENGTH_LONG).show()
             }
+
+            // Ininitalise the helper
+
+            val mySQLiteHelper = DatabaseOpenHelper(this)
+            val role = Role(srole,"")
+            val adr = Address(srue,numrue,scp,slocalite,"","")
+            mySQLiteHelper.addRole(role)
+            doAsync {
+
+                mySQLiteHelper.addAddress(adr)
+            }.execute()
+
+            Toast.makeText(baseContext, "process", Toast.LENGTH_LONG).show()
         }
     }
     fun goToLogin(){
@@ -79,8 +99,8 @@ class SignupActivity : AppCompatActivity() {
 //        finish();
 //    }
     fun userSignUp(srole: String, snom: String, sprenom: String, semail: String,
-                   spassword: String, sconfirmPassword: String, slocalite: String, scp: String,
-                   srue: String, stel: String, sbirthdate: String, slevel: String){
+                   spassword: String, sconfirmPassword: String, slocalite: String, scp: Int,
+                   srue: String, stel: String, slevel: String){
 //        Toast("userSignUp")
         var isSuccessSignup : Boolean = false
 

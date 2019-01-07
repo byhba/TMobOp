@@ -6,19 +6,22 @@ object  UserTable {
     val COLUMN_ID = "user_id"
     val COLUMN_NAME = "name"
     val COLUMN_FNAME = "fname"
-    val COLUMN_ADDRESS = "user_address"
     val COLUMN_EMAIL ="email"
+    val COLUMN_STREETNAME="street_name"
+    val COLUMN_NUMBER ="street_nb"
+    val COLUMN_ZIP ="COLUMN_NUMBER"
+    val COLUMN_CITY = "city"
     val COLUMN_TEL = "tel"
     val COLUMN_PASS = "pass"
     val COLUMN_ROLE = "role"
-    val COLUMN_FIELD ="discipline"
-    val COLUMN_LEVEL = "level"
-    val COLUMN_BIRTH = "birthdate"
-    val COLUMN_REGISTERDATE = "registeredAt"
+    //val COLUMN_FIELD ="discipline"
+    //val COLUMN_LEVEL = "level"
+    //val COLUMN_BIRTH = "birthdate"
+    //val COLUMN_REGISTERDATE = "registeredAt"
 
 
 }
-object RoleTable{
+/*object RoleTable{
     val TABLE_NAME = "roles"
     val COLUMN_ID = "role_id"
     val COLUMN_NAME = "role_name"
@@ -35,14 +38,9 @@ object FieldTable{
 object AddressTable{
     val TABLE_NAME = "address"
     val COLUMN_ID ="adress_id"
-    val COLUMN_NAME="street_name"
-    val COLUMN_NUMBER ="street_nb"
-    val COLUMN_ZIP ="COLUMN_NUMBER"
-    val COLUMN_CITY = "city"
-    val COLUMN_CANTON ="canton"
-    val COLUMN_COUNTRY =    "country"
 
-}
+
+}*/
 object DemandTable{
     val TABLE_NAME = "demand"
     val COLUMN_ID = "id"

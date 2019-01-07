@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+    >
+        <Button
+                android:id="@+id/homeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to home page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+        <Button
+                android:id="@+id/infoButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to info user page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+        <Button
+                android:id="@+id/readMessageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to read message page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+        <Button
+                android:id="@+id/sendMessageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to send message page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+        <Button
+                android:id="@+id/profilButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to Profil page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginRight="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+        <Button
+                android:id="@+id/goButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Go to login page"
+                android:textColor="@android:color/white"
+                android:background="@android:color/holo_blue_light"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="5dp"
+        />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

@@ -22,15 +22,7 @@
                 android:padding="5dp"
                 android:layout_margin="5dp"
                 android:orientation="vertical">
-            <EditText
-                    android:id="@+id/role"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/role"
-                    android:inputType="text"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white"
-                    android:autofillHints=""/>
+
             <EditText
                     android:id="@+id/nom"
                     android:layout_width="match_parent"
@@ -86,15 +78,7 @@
                     android:textColorHint="@android:color/white"
                     android:textAlignment="textStart"/>
 
-            <EditText
-                    android:id="@+id/level"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/level"
-                    android:inputType="text"
-                    android:textColor="@android:color/white"
-                    android:textColorHint="@android:color/white"
-            />
+
             <TextView android:layout_width="wrap_content"
                       android:layout_height="wrap_content"
                       android:textColor="@android:color/white"
